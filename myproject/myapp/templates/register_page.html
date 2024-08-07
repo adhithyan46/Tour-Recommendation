@@ -25,17 +25,17 @@
 
     <!-- Favicon
     ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
     <link rel="icon" type="image/png"  href="{% static 'img/new_favicon.png' %}">
 
     <!-- Stylesheets
     ================================================== -->
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{% static 'responsive.css' %}">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -84,8 +84,10 @@
       <div class="reg-text h1">
          <h1>Register.</h1>
       </div>
-        <form class="reg-form">
-            <label for="username">Username:</label>
+        <form class="reg-form" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+            <!-- <label for="username">Username:</label>
             <input type="text" id="username"  name="username" required>
           
             <label for="email">Email:</label>
@@ -96,12 +98,12 @@
           
             <label for="confirmPassword">Confirm Password:</label>
             <input type="password" id="confirmPassword" name="confirmPassword"  required>
-          
+           -->
             <button type="submit">Register</button>
           
           </form>
         
-      <p style="text-align: center;font-size: 15px; color: black;">Already have an account? <a href="login_page.html" class="log-reg">Login</a></p>
+      <p style="text-align: center;font-size: 17px; color: black;">Already have an account? <a href="login_page.html" class="log-reg">Login</a></p>
     
     </div>
     </div>
