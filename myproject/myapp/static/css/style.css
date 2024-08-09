@@ -53,7 +53,7 @@ a:hover {
 }
 
 p {
-    margin-bottom: 0;
+    margin: 5px;
     font-size: 14px;
     font-weight: 300;
     color: #9fa3a7;
@@ -1764,7 +1764,6 @@ a.linkedin-bg:hover {
     background-color: rgba(255, 255, 255, 0.226);
     font-size: 18px;
     font-weight: 550;
-    margin-bottom: 20px;
 
   }
   input::placeholder{

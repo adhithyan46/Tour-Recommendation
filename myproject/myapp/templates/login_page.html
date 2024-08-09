@@ -85,9 +85,11 @@
     <div class="login-text h1">
         <h1>Login.</h1>
     </div>
-            <form class="login-form">
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
+            <form class="login-form" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+        <!-- <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required> -->
         <button type="submit">Login</button>
       </form>
       <p style="text-align: center;font-size: 17px; color: black;">Already have an account? <a href="register_page.html" class="log-reg">Register</a></p>
