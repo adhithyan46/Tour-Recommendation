@@ -1729,7 +1729,7 @@ a.linkedin-bg:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px auto;
+    margin: auto;
     width: 300px;
     padding: 20px;
     border: 1px solid #000000;
@@ -1744,7 +1744,7 @@ a.linkedin-bg:hover {
     width: 300px;
     margin:  auto ;
     border-radius: 10px;
-    margin-top: 50px;
+    margin-top: 20px;
    
   }
   
@@ -1901,3 +1901,38 @@ a.linkedin-bg:hover {
     background-color: rgba(255, 255, 255, 0.534);
  }
  
+/* Add this CSS to your stylesheet */
+
+.messages {
+    list-style: armenian; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: auto; /* Remove default margin */
+}
+
+.messages li {
+    text-align: center;
+    margin-bottom: 10px; /* Space between messages */
+    padding: 5px; /* Space inside the message box */
+     /* Rounded corners */
+    color: #ff0000; /* Text color */
+    font-size: 16px; /* Font size */
+}
+
+.messages .success {
+    color:#28a745 ;
+    background-color: transparent; /* Green background for success messages */
+}
+
+.messages .error {
+    background-color: transparent; /* Red background for error messages */
+}
+
+.messages .warning {
+    background-color:transparent ; /* Yellow background for warnings */
+    color: #ffc107; /* Black text for better contrast on yellow */
+}
+
+.messages .info {
+    color: #17a2b8;
+    background-color: transparent; /* Blue background for informational messages */
+}

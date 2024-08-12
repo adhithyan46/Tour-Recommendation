@@ -85,6 +85,16 @@
     <div class="login-text h1">
         <h1>Login.</h1>
     </div>
+    <main id="login" class="login content">
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
             <form class="login-form" method="post">
                 {% csrf_token %}
                 {{form.as_p}}
@@ -93,7 +103,7 @@
         <button type="submit">Login</button>
       </form>
       <p style="text-align: center;font-size: 17px; color: black;">Already have an account? <a href="register_page.html" class="log-reg">Register</a></p>
-
+    </main>
     </div>
     </div>
   
