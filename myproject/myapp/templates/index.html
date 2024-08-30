@@ -68,13 +68,10 @@
 
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li class="active"><a href="index.html" data-toggle="dropdown">Home</a></li>
-
-                        </li>
-        
-                        <li><a href="search_page.html">Search</a></li>
-                        <li><a href="login_page.html">Login</a></li>
-                        <li><a href="register_page.html">Register</a></li>
+                        <li class="active"><a href="{% url 'index' %}" data-toggle="dropdown">Home</a></li>
+                        <li><a href="{% url 'search_page' %}">Search</a></li>
+                        <li><a href="{% url 'login_page' %}">Login</a></li>
+                        <li><a href="{% url 'register_page' %}">Register</a></li>
 
                     </ul>
 
@@ -89,8 +86,8 @@
             <div class="hero-text">
                 <h1>Start your travel.</h1>
                 <p>Explore the World, Your Way.</p>
-                <a href="login_page.html" class="btn btn-white">Login</a>
-                <a href="register_page.html" class="btn btn-white">Register</a>
+                <a href="{% url 'login_page' %}" class="btn btn-white">Login</a>
+                <a href="{% url 'register_page' %}" class="btn btn-white">Register</a>
 
 
             </div><!-- /.hero-text -->

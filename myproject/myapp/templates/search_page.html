@@ -69,10 +69,10 @@
     
                     <ul class="nav navbar-nav navbar-right" >
     
-                        <li ><a href="index.html" style="color: white;">Home</a></li>
-                        <li class="active"><a href="search_page.html" style="color: white;">Search</a></li>
-                        <li ><a href="login_page.html" style="color: white;">Login</a></li>
-                        <li><a href="register_page.html" style="color: white;">Register</a></li>
+                        <li ><a href="{% url 'index' %}" style="color: white;">Home</a></li>
+                        <li class="active"><a href="{% url 'search_page' %}" style="color: white;">Search</a></li>
+                        <li ><a href="{% url 'login_page'%}" style="color: white;">Login</a></li>
+                        <li><a href="{% url 'register_page' %}" style="color: white;">Register</a></li>
     
                     </ul>
     

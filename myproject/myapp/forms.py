@@ -1,4 +1,4 @@
-from django import forms
+from django import forms # type: ignore
 class SignupForm(forms.Form):
     username = forms.CharField(label='Username', max_length=150)
     email = forms.EmailField(label='Email')

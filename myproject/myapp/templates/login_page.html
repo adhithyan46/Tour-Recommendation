@@ -69,10 +69,10 @@
 
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="search_page.html">Search</a></li>
-                        <li class="active"><a href="login_page.html">Login</a></li>
-                        <li><a href="register_page.html">Register</a></li>
+                        <li><a href="{% url 'index' %}" data-toggle="dropdown">Home</a></li>
+                        <li><a href="{% url 'search_page' %}">Search</a></li>
+                        <li  class="active"><a href="{% url 'login_page' %}">Login</a></li>
+                        <li><a href="{% url 'register_page' %}">Register</a></li>
 
                     </ul>
 
@@ -102,7 +102,7 @@
         <input type="password" name="password" placeholder="Password" required> -->
         <button type="submit">Login</button>
       </form>
-      <p style="text-align: center;font-size: 17px; color: black;">Already have an account? <a href="register_page.html" class="log-reg">Register</a></p>
+      <p style="text-align: center;font-size: 17px; color: black;">Don't have an account? <a href="{% url 'register_page' %}" class="log-reg">Register</a></p>
     </main>
     </div>
     </div>
