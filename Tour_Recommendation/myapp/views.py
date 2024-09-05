@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 from . forms import SignupForm,LoginForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
-
+import pandas as pd
+from .models import Tour
 
 
 # from django.template import loader
@@ -51,7 +52,18 @@ def register_page(request):
 
                     
 def search_page(request):
-    messages.info(request, 'You are now on the search page.')
-    return render(request, 'search_page.html')
+    # Display a message to the user
 
+    # Read the CSV file with the tour data
+    csv_file_path = 'myapp/dataset/tour_data.csv'
+    tour_data = pd.read_csv(csv_file_path)
+
+    # Convert the DataFrame into a dictionary to pass to the template
+    tour_data = tour_data.to_dict(orient='records')
+
+    # Fetch all the Tour objects that include images uploaded via the admin
+    tours = Tour.objects.all()
+
+    # Render the search_page.html template, passing both the tour_data from the CSV and the Tour objects with images
+    return render(request, 'search_page.html', {'tour_data': tour_data, 'tours': tours})
 # Create your views here.
