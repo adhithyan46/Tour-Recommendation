@@ -1775,7 +1775,6 @@ a.linkedin-bg:hover {
     background-color: #1b94f7;
     color: white;
     padding: 3px 15px;
-    margin: 15px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -1844,24 +1843,26 @@ a.linkedin-bg:hover {
     background: url(../img/search_bg.jpg) no-repeat center / cover; 
     height: 100%;
     width: 100%;
-    display: table;
-    position: relative;
+    display: flex;
+    /* position: relative; */
   }
 .search-form{
     
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     text-align: left;
-    width: 300px;
+    /* width: 300px; */
     padding: 20px ;
     margin: auto ;
     border-radius: 10px;
 }
 .search-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
         align-items: center;
-        margin:  auto;
+        margin: auto;
+        margin-top: 70px ;
+        
         width: 400px;
         padding: 20px;
         border-radius: 5px;
@@ -1881,17 +1882,17 @@ a.linkedin-bg:hover {
     padding: 20px;
     margin: 5px ;
  }
- input[type="file"] {
+ /* input[type="file"] {
     display: inline-block;
     padding: 10px 20px;
     cursor: pointer;
     margin-bottom: 10px;
-  }
+  } */
  .search input[type='text']{
     width: 100%;
     height:40px ;
     margin-bottom: 13px ;
-    display: block;
+    display: flex;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 50px;

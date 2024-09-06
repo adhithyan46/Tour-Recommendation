@@ -54,10 +54,13 @@
         text-align: center;
         background-color: rgba(255, 255, 255, 0.877);
         border-radius: 10px;
+        
     }
     .tour-card img {
         max-width: 100%;
+        height: 200px;
         border-radius: 8px; /* Optional: Add rounded corners to images */
+        background-color: transparent;
     }
     .no-tours {
         margin: 50px;
@@ -69,50 +72,49 @@
         <nav id="primary-navigation" class="site-navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="site-title" style="color: white;"><span>Tour</span>Recommendation</a>
+                    <a class="site-title"><span>Tour</span>Recommendation</a>
                 </div>
                 <div class="collapse navbar-collapse" id="agency-navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{% url 'index' %}" style="color: white;">Home</a></li>
-                        <li class="active"><a href="{% url 'search_page' %}" style="color: white;">Search</a></li>
-                        <li><a href="{% url 'login_page'%}" style="color: white;">Login</a></li>
-                        <li><a href="{% url 'register_page' %}" style="color: white;">Register</a></li>
+                        <li><a href="{% url 'index' %}" >Home</a></li>
+                        <li class="active"><a href="{% url 'search_page' %}" >Search</a></li>
+                        <li><a href="{% url 'login_page'%}">Login</a></li>
+                        <li><a href="{% url 'register_page' %}">Register</a></li>
                     </ul>
                 </div>
             </div>   
         </nav>
     </header>
 
-    <div id="search" class="search content">
-        <div class="search-text h1">
-           <h1>Search a place or an image.</h1>
+    <div id="search" >
+        
+           <!-- <h1>Search a place or an image.</h1> -->
         </div>
         <div class="search-container">
             <form class="search-form" action="#" method="get">
                 <input type="text" name="search" placeholder="Search">
-                <input type="file" name="image_search" accept="image/*">
+                
                 <button type="submit">Search</button>
             </form>
         </div> 
 
         <!-- Card layout to display the tour places and images -->
-        <div class="tour-grid">             
-            {% for tour in tours %} 
-                {% for t in tour_data %}
-                
-                    <div class="tour-card">
-                        {% if t.place == tour.place %}
-                            <img src="{{ tour.image.url }}" alt="{{ tour.place }}">
-                        {% else %}
-                            <img src="{% static 'img/default-image.jpg' %}" alt="No image available">
-                        {% endif %}
-                        <h4 style="color: black;" class="card-title">{{ t.place }}</h4>
-                        <p style="color: black;" class="card-text"><strong>City:</strong> {{ t.city }}</p>
-                        <p style="color: black;" class="card-text"><strong>Type:</strong> {{ t.type }}</p>
-                        <p style="color: black;" class="card-text"><strong>Rating:</strong> {{ t.rating }}</p>
-                    </div>
-                {% endfor %}
-            {% endfor %}
+        <div class="tour-grid"> 
+           {% for t in tour_data %}
+    <div class="tour-card">
+        {% if t.image_url %}
+            <img src="{{ t.image_url }}" class="tour-card img" alt="{{ t.place }}">
+        {% else %}
+            <img src="{% static 'img/default-image.jpg' %}" class="tour-card img" alt="No image available">
+        {% endif %}
+        <h4 style="color: black;" class="card-title">{{ t.place }}</h4>
+        <p style="color: black;" class="card-text"><strong>City:</strong> {{ t.city }}</p>
+        <p style="color: black;" class="card-text"><strong>Type:</strong> {{ t.type }}</p>
+        <p style="color: black;" class="card-text"><strong>Rating:</strong> {{ t.rating }}</p>
+    </div>
+{% endfor %}
+
+
         </div>
     </div>
 </body>
