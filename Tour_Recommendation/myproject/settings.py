@@ -121,6 +121,8 @@ static_root='C:/Users/Public/template_add/myproject/myapp/static/css/style.css'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 DEBUG = True
+LOGIN_URL = 'login_page'  # or your actual login URL
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

@@ -81,6 +81,7 @@
                         <li class="active"><a href="{% url 'search_page' %}" >Search</a></li>
                         <li><a href="{% url 'login_page'%}">Login</a></li>
                         <li><a href="{% url 'register_page' %}">Register</a></li>
+                        <li><a href="{% url 'logout_page' %}">Logout</a></li>
                     </ul>
                 </div>
             </div>   
@@ -112,6 +113,7 @@
         <p style="color: black;" class="card-text"><strong>City:</strong> {{ t.city }}</p>
         <p style="color: black;" class="card-text"><strong>Type:</strong> {{ t.type }}</p>
         <p style="color: black;" class="card-text"><strong>Rating:</strong> {{ t.rating }}</p>
+        
     </div>
 {% endfor %}
 

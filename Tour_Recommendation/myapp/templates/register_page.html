@@ -72,6 +72,7 @@
                   <li><a href="{% url 'search_page' %}">Search</a></li>
                   <li ><a href="{% url 'login_page' %}">Login</a></li>
                   <li class="active"><a href="{% url 'register_page' %}">Register</a></li>
+                  <li><a href="{% url 'logout_page' %}">Logout</a></li>
 
 
                 </ul>
@@ -98,18 +99,7 @@
         <form class="reg-form" method="post">
           {% csrf_token %}
           {{form.as_p}}
-            <!-- <label for="username">Username:</label>
-            <input type="text" id="username"  name="username" required>
-          
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"  required>
-          
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password"  required>
-          
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword"  required>
-           -->
+           
             <button type="submit">Register</button>
           
           </form>
