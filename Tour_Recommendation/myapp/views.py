@@ -53,11 +53,15 @@ def register_page(request):
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
+            user_type = form.cleaned_data['type']
             user = User(username=username, email=email)
             user.set_password(password)
             user.save()
             
-            UserProfile.objects.create(user=user)
+            UserProfile.objects.create(user=user , type=user_type)
+            
+            
+            
 
            
             return redirect('login_page')
@@ -79,7 +83,7 @@ def tour_recommend(user_profile, filtered_tours):
     # Initialize Score column
     recommended_tours['Score'] = 0
     
-    for interest in user_profile['interests']:
+    for interest in user_profile['type']:
         recommended_tours['Score'] += recommended_tours['Description'].str.contains(interest, case=False).astype(int)
     
     # Sort the tours by the score
@@ -123,14 +127,14 @@ def search_page(request):
     try:
         # Fetch user profile to get actual interests
         user_profile = UserProfile.objects.get(user=request.user)
-        interests = user_profile.interests.split(',') if user_profile.interests else []
+        type = user_profile.type.split(',') if user_profile.type else []
     except UserProfile.DoesNotExist:
         # Handle case where UserProfile does not exist
-        interests = []
+        type = []
         messages.warning(request, "Your profile is incomplete. Please update your profile.")
 
     user_profile = {
-        'interests': interests,
+        'type': type,
     }
     
 
@@ -146,20 +150,12 @@ def search_page(request):
 
 @login_required(login_url='login_page')
 def profile_page(request):
-    user = request.user  # Get the currently logged-in user
     try:
-        # Fetch the user's profile
-        user_profile = UserProfile.objects.all()
+        user_profile = UserProfile.objects.get(user=request.user)
     except UserProfile.DoesNotExist:
-        # Handle case where profile does not exist
         user_profile = None
-        return redirect('login_page')
 
-    context = {
-        'user': user,
-        'user_profile': user_profile,
-    }
-    return render(request, 'profile_page.html', context)
+    return render(request, 'profile_page.html', {'user': request.user, 'user_profile': user_profile})
 
 def about_page(request):
     return render(request, 'about_page.html')

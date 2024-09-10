@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-        <title>Login Page</title>
+        <title>Profile Page</title>
     
         <meta name="description" content="">
         <meta name="author" content="">
@@ -91,7 +91,7 @@
                 <li><strong>Username:</strong> {{ user.username }}</li>
                 <li><strong>Email:</strong> {{ user.email }}</li>
                 {% if user_profile %}
-                    <li></li>
+                    <li><strong>Location type:</strong>{{ user_profile.type }}</li>
                 {% else %}
                     <li><em>No profile information available. Please update your profile.</em></li>
                 {% endif %}
