@@ -43,6 +43,10 @@ def login_page(request):
     return render(request, 'login_page.html', {'form': form})
 
 def register_page(request):
+    if request.user.is_authenticated:
+        # If the user is already logged in, redirect them to the search page
+        return redirect('search_page')
+    messages.info(request, 'Please login to access your account.')
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
@@ -139,3 +143,23 @@ def search_page(request):
     
     # Render the search_page.html template, passing the combined data
     return render(request, 'search_page.html', {'tour_data': recommendation_list})
+
+@login_required(login_url='login_page')
+def profile_page(request):
+    user = request.user  # Get the currently logged-in user
+    try:
+        # Fetch the user's profile
+        user_profile = UserProfile.objects.all()
+    except UserProfile.DoesNotExist:
+        # Handle case where profile does not exist
+        user_profile = None
+        return redirect('login_page')
+
+    context = {
+        'user': user,
+        'user_profile': user_profile,
+    }
+    return render(request, 'profile_page.html', context)
+
+def about_page(request):
+    return render(request, 'about_page.html')

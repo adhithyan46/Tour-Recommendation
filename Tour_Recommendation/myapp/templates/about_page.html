@@ -1,0 +1,244 @@
+<!-- templates/about_page.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+        <title>Tour Recommendation</title>
+    
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="keywords" content="">
+    
+        <!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+    
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+        <!-- Favicon
+        ================================================== -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png"  href="{% static 'img/new_favicon.png' %}">
+    
+        <!-- Stylesheets
+        ================================================== -->
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <style>
+        /* Inline CSS for simplicity; consider moving to a separate CSS file */
+        body ,html{  background: url(../static/img/background2.jpg) no-repeat center / cover; 
+        height: 100%;
+        width: 100%;
+        display: table;
+        position: relative;
+        } 
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            margin: 40px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 50px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        p{
+            color: black;
+        }
+        li{
+            background-color: transparent;
+        }
+    </style>
+
+<body>
+    <!-- Navigation Header -->
+    <header id="masthead" class="site-header">
+        <nav id="primary-navigation" class="site-navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                   
+                    <a class="site-title"><span>Tour</span>Recommendation</a>
+
+                </div><!-- /.navbar-header -->
+
+                <div class="collapse navbar-collapse" id="agency-navbar-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li><a href="{% url 'index' %}" data-toggle="dropdown">Home</a></li>
+                        <li><a href="{% url 'search_page' %}">Search</a></li>
+                        <li class="active"><a href="{% url 'about_page' %}">AboutUs</a></li>
+                        <li><a href="{% url 'profile_page' %}">Profile</a></li>
+                        <li><a href="{% url 'logout_page' %}">Logout</a></li>
+
+
+
+                    </ul>
+
+                </div>
+
+            </div>   
+        </nav><!-- /.site-navigation -->
+    </header><!-- /#mastheaed -->
+
+    <!-- Introduction Section -->
+    <section class="section" id="introduction">
+        <div class="container">
+            <h2 class="section-title">Welcome to TourRecommendation!</h2>
+            <p class="lead text-center">
+                Our platform is dedicated to helping travelers discover the best places to visit based on their unique preferences.
+                Whether you're looking for adventure, relaxation, or cultural experiences, we've got personalized recommendations just for you.
+            </p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section bg-light" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="bi bi-person-fill feature-icon"></i>
+                        <h4>Personalized Recommendations</h4>
+                        <p>Create your profile by selecting your preferred types of locations (e.g., adventure, beach, historical, etc.). Our system uses these preferences to recommend tours and places tailored just for you.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="bi bi-search feature-icon"></i>
+                        <h4>Search & Discover</h4>
+                        <p>Use our search feature to explore various destinations, or let our recommendation engine suggest places you might enjoy based on your interests and location type.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="bi bi-stars feature-icon"></i>
+                        <h4>Real User Reviews</h4>
+                        <p>We use reviews and ratings from trusted sources to ensure that you're always seeing high-quality recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Features Section -->
+    <section class="section" id="unique-features">
+        <div class="container">
+            <h2 class="section-title">Unique Features</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <i class="bi bi-gear-fill feature-icon"></i>
+                        <h4>Tailored Recommendations</h4>
+                        <p>Our algorithm takes your specific interests and location type to suggest places that match your style of travel.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <i class="bi bi-database-fill feature-icon"></i>
+                        <h4>Comprehensive Database</h4>
+                        <p>We have a wide range of destinations across India, from popular tourist spots to hidden gems.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <i class="bi bi-search-heart-fill feature-icon"></i>
+                        <h4>Dynamic Search</h4>
+                        <p>Easily search by city, place, or type of experience, and view high-quality images and detailed descriptions for each location.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <i class="bi bi-person-circle feature-icon"></i>
+                        <h4>User Profiles</h4>
+                        <p>Create a personal profile to store your interests and preferences, making future recommendations even more accurate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section bg-light" id="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <ul class="list-group list-group-flush" >
+                <li >
+                    <strong>Personalized Experience:</strong> We believe that every traveler is unique, so we offer recommendations that match your specific interests and travel goals.
+                </li>
+                <li >
+                    <strong>User-Friendly Interface:</strong> Our platform is designed to be simple, intuitive, and responsive, ensuring a seamless experience whether you're using a phone, tablet, or desktop.
+                </li>
+                <li >
+                    <strong>Reliable Data:</strong> Our recommendations are backed by user reviews and ratings, ensuring you have access to quality information.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Future Plans Section -->
+    <section class="section" id="future-plans">
+        <div class="container">
+            <h2 class="section-title" style="color: bisque;">Our Vision</h2>
+            <p class="text-center" style="color: bisque;">
+                We are continually improving our recommendation engine and expanding our database of locations. In the near future, we plan to introduce features like trip planning, budget-friendly recommendations, and user-generated content such as reviews and photos from past travelers.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="section bg-light" id="contact-us">
+        <div class="container">
+            <h2 class="section-title" style="color: bisque;">Contact Us</h2>
+            <p class="text-center" style="color: bisque;">
+                We'd love to hear from you! If you have any questions, suggestions, or feedback, feel free to reach out via email at 
+                <a href="mailto:support@tourrecommendation.com">support@tourrecommendation.com</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; {{ current_year }} TourRecommendation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Optional: Include Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
+</html>
