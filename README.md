@@ -1,12 +1,12 @@
 # Tour Recommendation
 A Django-based web application that provides personalized tour recommendations based on user interests, ratings, and location types. This system uses machine learning algorithms and a custom dataset to suggest tourist destinations.
 ## Features
-1.User Registration and Login: Users can create an account, log in, and update their profiles.
-2.User Profile Management: Each user has a profile that includes their name, email, and preferred location type.
-3.Search Functionality: Users can search for tourist destinations based on their interests.
-4.Personalized Recommendations: The system recommends destinations based on user interests using machine learning techniques such as TF-IDF and cosine similarity.
-5.Responsive Design: The application features a responsive design that works well on various devices.
-6.Admin Management: Admins can upload destination images and manage tour data through the Django admin panel.
+* User Registration and Login: Users can create an account, log in, and update their profiles.
+User Profile Management: Each user has a profile that includes their name, email, and preferred location type.
+Search Functionality: Users can search for tourist destinations based on their interests.
+Personalized Recommendations: The system recommends destinations based on user interests using machine learning techniques such as TF-IDF and cosine similarity.
+Responsive Design: The application features a responsive design that works well on various devices.
+Admin Management: Admins can upload destination images and manage tour data through the Django admin panel.
 ## Dataset
 1.city: Name of the city.
 2.place: Tourist attraction.
