@@ -27,5 +27,15 @@ A Django-based web application that provides personalized tour recommendations b
 * Modifying Interests: You can adjust the interests and recommendation logic in the tour_recommend() function inside views.py.
 
 
-##Index page
-
+## Index page
+![index](https://github.com/user-attachments/assets/422d9a21-ce17-4a09-a6c5-bebe3469a964)
+## About Us page
+![aboutus](https://github.com/user-attachments/assets/00fb2d67-9d9f-4ebb-849c-38b2c578b29d)
+## Login page
+![login](https://github.com/user-attachments/assets/b73bceb1-f22b-47f6-a667-fdbd874e4495)
+## Profile page
+![profile](https://github.com/user-attachments/assets/9cffe4d0-e481-491f-85fb-1e5cb17295b1)
+## Register page
+![register](https://github.com/user-attachments/assets/c2fc786d-bc36-4c89-98d2-dd79516218db)
+## Search page
+![search](https://github.com/user-attachments/assets/269ef277-b676-45f1-86b5-030db4218e0c)
