@@ -8,9 +8,12 @@ A Django-based web application that provides personalized tour recommendations b
 * Responsive Design: The application features a responsive design that works well on various devices.
 * Admin Management: Admins can upload destination images and manage tour data through the Django admin panel.
 ## Dataset
-1 city: Name of the city.
+1.city: Name of the city.
+
 2.place: Tourist attraction.
+
 3.rating: User rating for the place.
+
 4.type: Category of the place (e.g., Temple, Lake, Garden, Park).
 ## Usage
 1.Register: Create a new account and provide your details, including your preferred location type.
