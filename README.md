@@ -19,3 +19,23 @@ A Django-based web application that provides personalized tour recommendations b
 ## Customization
 * Adding New Data: You can add new tourist destinations by updating the tour_data.csv file or by using the Django admin panel.
 * Modifying Interests: You can adjust the interests and recommendation logic in the tour_recommend() function inside views.py.
+
+├── myapp/
+│   ├── dataset/
+│   │   └── tour_data.csv  # Dataset used for recommendations
+│   ├── migrations/
+│   ├── models.py          # Database models (Tour, UserProfile, Interest)
+│   ├── views.py           # Core views (Search, Profile, Registration, Login)
+│   ├── templates/
+│   │   ├── base.html      # Base template for the project
+│   │   ├── profile_page.html  # User profile template
+│   │   ├── search_page.html   # Search and recommendation page
+│   │   └── login_page.html    # Login page template
+│   └── forms.py           # Django forms (SignupForm, LoginForm)
+├── static/
+│   └── css/
+│       └── style.css      # Custom CSS for the application
+├── manage.py              # Django management commands
+├── README.md              # Project documentation
+└── requirements.txt       # Python dependencies
+
